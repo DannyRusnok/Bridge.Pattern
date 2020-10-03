@@ -43,6 +43,6 @@ namespace Bridge.Pattern.BridgePatternApproach
             StopTime = stopTime;
         }
         
-        public override string GetBossReportRowCore() => $"The employee {EmployeeName} was {Description} for duration {TimeInterval} from {StartTime} to {StopTime}";
+        public override string GetBossReportRowCore() => $"The employee {EmployeeName} was {Description} from {StartTime} to {StopTime}";
     }
 }

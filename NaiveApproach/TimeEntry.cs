@@ -62,7 +62,7 @@ namespace Bridge.Pattern.NaiveApproach
             StopTime = stopTime;
         }
 
-        public override string GetBossReportsRow() => $"The employee {EmployeeName} was {Description} for duration {TimeInterval} from {StartTime} to {StopTime}";
+        public override string GetBossReportsRow() => $"The employee {EmployeeName} was {Description} from {StartTime} to {StopTime}";
     }
 
     public class ApprovedSpecificTimeRangeTimeEntry : SpecificRangeTimeEntry
