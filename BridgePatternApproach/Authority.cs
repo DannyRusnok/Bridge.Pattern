@@ -12,13 +12,6 @@
         public abstract string GetAuthorityVerb();
     }
 
-    public class NoAuthority : Authority
-    {
-        public NoAuthority() : base("") { }
-
-        public override string GetAuthorityVerb() => "";
-    }
-
     public class ApprovingAuthority : Authority
     {
         public ApprovingAuthority(string name) : base(name) { }

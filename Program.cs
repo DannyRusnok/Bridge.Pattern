@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using Bridge.Pattern.BridgePatternApproach;
+using Bridge.Pattern.NaiveApproach;
 using TimeEntry = Bridge.Pattern.NaiveApproach.TimeEntry;
 
 namespace Bridge.Pattern
@@ -30,22 +31,22 @@ namespace Bridge.Pattern
 
         static void Main(string[] args)
         {
-            //var approvedDurationOnlyTimeEntry = new ApprovedDurationOnlyTimeEntry("bugfixing", TimeSpan.FromHours(2), "Roger", "Karen");
-            //var bannedDurationOnlyTimeEntry = new BannedDurationOnlyTimeEntry("smoke breaking", TimeSpan.FromHours(2), "Roger", "Karen");
-            //var approvedSpecificRangeTimeEntry = new ApprovedSpecificTimeRangeTimeEntry("creating new feature", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, "Lucas");
-            //var bannedSpecificTimeRangeTimeEntry = new BannedDurationOnlyTimeEntry("toilet breaking", TimeSpan.FromHours(2), "Levi", "Lucas");
+            var approvedDurationOnlyTimeEntry = new Bridge.Pattern.NaiveApproach.ApprovedDurationOnlyTimeEntry("bugfixing", TimeSpan.FromHours(2), "Roger", "Karen");
+            var bannedDurationOnlyTimeEntry = new Bridge.Pattern.NaiveApproach.BannedDurationOnlyTimeEntry("smoke breaking", TimeSpan.FromHours(2), "Roger", "Karen");
+            var approvedSpecificRangeTimeEntry = new Bridge.Pattern.NaiveApproach.ApprovedSpecificTimeRangeTimeEntry("creating new feature", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, "Lucas");
+            var bannedSpecificTimeRangeTimeEntry = new Bridge.Pattern.NaiveApproach.BannedDurationOnlyTimeEntry("toilet breaking", TimeSpan.FromHours(2), "Levi", "Lucas");
 
-            var approvedDurationOnlyTimeEntry = new Bridge.Pattern.BridgePatternApproach
-                .DurationOnlyTimeEntry("bugfixing", TimeSpan.FromHours(2), "Roger", new ApprovingAuthority("Karen"));
-            
-            var bannedDurationOnlyTimeEntry = new Bridge.Pattern.BridgePatternApproach
-                .DurationOnlyTimeEntry("taking smoke break", TimeSpan.FromHours(2), "Roger", new BanningAuthority("Karen"));
+            //var approvedDurationOnlyTimeEntry = new Bridge.Pattern.BridgePatternApproach
+            //    .DurationOnlyTimeEntry("bugfixing", TimeSpan.FromHours(2), "Roger", new ApprovingAuthority("Karen"));
 
-            var approvedSpecificRangeTimeEntry = new Bridge.Pattern.BridgePatternApproach
-                .SpecificRangeTimeEntry("creating new feature", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, new ApprovingAuthority("Lucas"));
-            
-            var bannedSpecificTimeRangeTimeEntry = new Bridge.Pattern.BridgePatternApproach
-                .SpecificRangeTimeEntry("taking toilet break", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, new BanningAuthority("Lucas"));
+            //var bannedDurationOnlyTimeEntry = new Bridge.Pattern.BridgePatternApproach
+            //    .DurationOnlyTimeEntry("taking smoke break", TimeSpan.FromHours(2), "Roger", new BanningAuthority("Karen"));
+
+            //var approvedSpecificRangeTimeEntry = new Bridge.Pattern.BridgePatternApproach
+            //    .SpecificRangeTimeEntry("creating new feature", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, new ApprovingAuthority("Lucas"));
+
+            //var bannedSpecificTimeRangeTimeEntry = new Bridge.Pattern.BridgePatternApproach
+            //    .SpecificRangeTimeEntry("taking toilet break", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, new BanningAuthority("Lucas"));
 
             Console.Write(CreateBossReport(approvedDurationOnlyTimeEntry, bannedDurationOnlyTimeEntry, approvedSpecificRangeTimeEntry, bannedSpecificTimeRangeTimeEntry));
 
