@@ -34,7 +34,7 @@ namespace Bridge.Pattern
             var approvedDurationOnlyTimeEntry = new Bridge.Pattern.NaiveApproach.ApprovedDurationOnlyTimeEntry("bugfixing", TimeSpan.FromHours(2), "Roger", "Karen");
             var bannedDurationOnlyTimeEntry = new Bridge.Pattern.NaiveApproach.BannedDurationOnlyTimeEntry("smoke breaking", TimeSpan.FromHours(2), "Roger", "Karen");
             var approvedSpecificRangeTimeEntry = new Bridge.Pattern.NaiveApproach.ApprovedSpecificTimeRangeTimeEntry("creating new feature", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, "Lucas");
-            var bannedSpecificTimeRangeTimeEntry = new Bridge.Pattern.NaiveApproach.BannedDurationOnlyTimeEntry("toilet breaking", TimeSpan.FromHours(2), "Levi", "Lucas");
+            var bannedSpecificTimeRangeTimeEntry = new Bridge.Pattern.NaiveApproach.BannedSpecificTimeRangeTimeEntry("toilet breaking", "Levi", DateTime.Now.AddHours(-1), DateTime.Now, "Lucas");
 
             //var approvedDurationOnlyTimeEntry = new Bridge.Pattern.BridgePatternApproach
             //    .DurationOnlyTimeEntry("bugfixing", TimeSpan.FromHours(2), "Roger", new ApprovingAuthority("Karen"));
